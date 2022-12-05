@@ -1,0 +1,6 @@
+CREATE TABLE `wordle`.`users` (`id` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `wordle`.`attemps` (`id` INT NOT NULL AUTO_INCREMENT , `points` INT NOT NULL , `user` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `attemps` ADD CONSTRAINT `fk_user` FOREIGN KEY (`user`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
