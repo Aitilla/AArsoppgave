@@ -1,7 +1,6 @@
 import random #Importerer library random som gir meg muligheten til å velge et tilfeldig objekt fra en array
 from words import wordlist #Importerer wordlist arrayen i words.py filen
 from termcolor import colored #Importerer library Termcolor som gir meg muligheten til å farge ord
-
 import mysql.connector
 
 mydb = mysql.connector.connect(
@@ -14,33 +13,41 @@ mydb = mysql.connector.connect(
 chosenword = random.choice(wordlist) #Velger tilfelig ord fra ordlisten
 
 
+#Startmeny hvor du skal bestemme om du skal spille, sjekke leaderboard, lage eller logge inn på en bruker eller avslutte programmet
+#OBS det er ikke mulig å lage brukere eller logge inn enda
 
 def printMeny():
     print("-------------------ORDLEK-------------------")
     print("| 1. Play                                  |")
     print("| 2. Leaderboard                           |")
-    print("| 3. Create account                        |")
-    print("| 4. Exit                                  |")
+    print("| 3. Logg inn                              |")
+    print("| 4. Create account                        |")
+    print("| 5. Exit                                  |")
+    print("--------------------------------------------")
     menyvalg = input("Skrin inn tall for å velge fra menyen:")
     utfoerMenyvalg(menyvalg)
 
+#Her bestemmes hvor du skal sendes 
 def utfoerMenyvalg(valgtall):
-    if(valgtall == "1"):
+    if(valgtall != "1" or "2" or "3" or "4" or "5"):
+        print("Skriv et tall mellom 1 og 5")
+    elif(valgtall == "1"):
         play()
     elif(valgtall == "2"):
         leaderboard()
     elif(valgtall == "3"):
         print("rar")
     elif(valgtall == "4"):
+        print("rar")
+    elif(valgtall == "5"):
         exit()
 
-#Sjekker om ordet er riktig og hvis det er riktig stop programmet
+#Hvis ordet du gjetter er riktig, stopper programmet og printer at du gjettet korrekt
 def check_brukerord(brukerord):
     if brukerord == chosenword:
         print("Du har gjettet riktig ord. Ordet var", colored(chosenword, 'green'))
         exit()
 
-#En løkke som sier så lenge du har mer en 0 forsøk skal koden kjøre
 def play():
     #Introduksjon til spillet
     print("************ORDLEK************") #Det er 12 stjerner på hver side
@@ -50,13 +57,15 @@ def play():
     print("Hvis ordet lyser", colored("rødt,", 'red'), "vil det si at hele ordet er feil")
     
     allowed_guesses = 6 #Mengde forsøk du starter med
+
+    #En løkke som sier så lenge du har mer en 0 forsøk skal koden kjøre
     while allowed_guesses > 0:
         brukerord = input("Sriv et ord på 4 bokstaver").upper()
         check_brukerord(brukerord)
         if len(brukerord) > 4 or len(brukerord) < 4: #Hvis ordet du skriver inn er mer eller mindre enn 4 bokstaver skal den ikke kjøre koden under
             print("Ordet må være 4 bokstaver")
         else:
-            for bokstav in range(0, len(brukerord)):  
+            for x in range(0, len(brukerord)):  
                 if brukerord[0] == chosenword[0]: #Bokstav 1 i ordet som er riktig plassert
                     print(colored(brukerord[0], 'green') + brukerord[1] + brukerord[2] + brukerord[3])
                 if brukerord[1] == chosenword[1]: #Bokstav 2 i ordet som er riktig plassert
@@ -105,8 +114,10 @@ def play():
                     if allowed_guesses <= 0: #Hvis du har brukt opp forsøkene dine skal programmet si hva dagens ord var og skrive det ur i grønt
                         print("Ordet var", colored(chosenword, 'green'))
 
-                    break
+                    break #Stopper loopen sånn at den bare går en gang
 
+#Hvis du skriver "2" printes highscores
+#OBS den er ikke fult optimal, men det funker
 def leaderboard():
     mycursor = mydb.cursor()
 

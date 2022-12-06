@@ -1,3 +1,5 @@
+#OBS alt i denne filen er hvordan jeg skal starte på aarsoppgaven min andre termin
+
 import random
 from words import wordlist
 from termcolor import colored
@@ -18,3 +20,5 @@ def checkWord():
 
 callChosen()
 checkWord()
+
+#OBS alt i denne filen er hvordan jeg skal starte på aarsoppgaven min andre termin
