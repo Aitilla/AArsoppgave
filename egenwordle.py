@@ -4,9 +4,9 @@ from termcolor import colored #Importerer library Termcolor som gir meg mulighet
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="",
-    user="root",
-    password="",
+    host="172.28.207.183",
+    user="wordleDB",
+    password="raring123",
     database="wordle"
 )
 
@@ -29,18 +29,20 @@ def printMeny():
 
 #Her bestemmes hvor du skal sendes 
 def utfoerMenyvalg(valgtall):
-    if(valgtall != "1" or "2" or "3" or "4" or "5"):
+    if(valgtall < "1" or valgtall > "5"):
         print("Skriv et tall mellom 1 og 5")
-    elif(valgtall == "1"):
-        play()
-    elif(valgtall == "2"):
-        leaderboard()
-    elif(valgtall == "3"):
-        print("rar")
-    elif(valgtall == "4"):
-        print("rar")
-    elif(valgtall == "5"):
-        exit()
+        printMeny()
+    else:
+        if(valgtall == "1"):
+            play()
+        elif(valgtall == "2"):
+            leaderboard()
+        elif(valgtall == "3"):
+            print("rar")
+        elif(valgtall == "4"):
+            print("rar")
+        elif(valgtall == "5"):
+            exit()
 
 #Hvis ordet du gjetter er riktig, stopper programmet og printer at du gjettet korrekt
 def check_brukerord(brukerord):
