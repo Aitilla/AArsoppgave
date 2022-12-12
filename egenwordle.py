@@ -42,6 +42,7 @@ def utfoerMenyvalg(valgtall):
         elif(valgtall == "4"):
             print("rar")
         elif(valgtall == "5"):
+            print("Du har nå avsluttet programmet")
             exit()
 
 #Hvis ordet du gjetter er riktig, stopper programmet og printer at du gjettet korrekt
@@ -127,5 +128,6 @@ def leaderboard():
 
     highscores = mycursor.fetchall()
     print(highscores)
+
 
 printMeny()
