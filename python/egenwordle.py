@@ -1,5 +1,5 @@
 import random #Importerer library random som gir meg muligheten til å velge et tilfeldig objekt fra en array
-from words import wordlist #Importerer wordlist arrayen i words.py filen
+from python.words import wordlist #Importerer wordlist arrayen i words.py filen
 from termcolor import colored #Importerer library Termcolor som gir meg muligheten til å farge ord
 import mysql.connector
 

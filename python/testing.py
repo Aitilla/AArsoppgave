@@ -1,7 +1,7 @@
 #OBS alt i denne filen er hvordan jeg skal starte på aarsoppgaven min andre termin
 
 import random
-from words import wordlist
+from python.words import wordlist
 from termcolor import colored
 
 
