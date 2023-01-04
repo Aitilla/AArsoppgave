@@ -1,7 +1,0 @@
-Hvordan sette opp programmet mitt
-
-1. Åpne Xampp. Start apache og MySQL. Etter du har startet MySQL trykk admin for å åpne myphpadmin
-2. For å sette opp myphpadmin må du importere wordle.sql som er databasen og wordleDB.sql som er brukeren. (alle filer ligger i documentation)
-3. I egenwordle.py filen må du endre ip adressen til det maskinen din har. For å finne ut av det, 
-    åpne command prompt skriv "ipconfig" og finn IPv4 og bytt ut den i filen med det som kom opp.
-4. Nå skal alt fungere og du skal kunne starte opp programmet i VSCode eller det du bruker.

@@ -4,7 +4,7 @@ from termcolor import colored #Importerer library Termcolor som gir meg mulighet
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="172.28.207.183",
+    host="10.2.2.13",
     user="wordleDB",
     password="raring123",
     database="wordle"
@@ -54,7 +54,7 @@ def check_brukerord(brukerord):
 def play():
     #Introduksjon til spillet
     print("************ORDLEK************") #Det er 12 stjerner på hver side
-    print("Ordet skal inneholde maksimalt 4 bokstaver")
+    print("Ordet skal inneholde maksimalt 4 bokstaver og du har 6 forsøk på å gjette ordet")
     print("Hvis en bokstav lyser", colored("gult,", 'yellow'), "vil det si at bokstaven er i ordet, men er feil plassert")
     print("Hvis bokstaven lyser", colored("grønt,", 'green'), "vil det si at bokstaven er i ordet og riktig plassert")
     print("Hvis ordet lyser", colored("rødt,", 'red'), "vil det si at hele ordet er feil")

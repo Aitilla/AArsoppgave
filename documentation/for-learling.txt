@@ -1,0 +1,7 @@
+Hvordan sette opp mitt programmet på egen maskin
+
+1. Åpne Hyper-V Manager og start aarsoppgaveVM-windows og passordet er enten 1122 eller aaretsraring123
+2. Åpne Xampp på den virituelle maskinen, så start apache og MySQL
+3. Åpne Python programmet og endre host adressen til IPv4 adressen som er på den virituelle maskinen
+    du finner IPv4 adressen ved å skrive ipconfig i command prompt
+4. Kjør programmet ved å trykke på f5 i python filen
