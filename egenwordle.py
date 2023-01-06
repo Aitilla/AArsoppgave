@@ -53,8 +53,9 @@ def check_brukerord(brukerord):
 
 def play():
     #Introduksjon til spillet
-    print("************ORDLEK************") #Det er 12 stjerner på hver side
-    print("Ordet skal inneholde maksimalt 4 bokstaver og du har 6 forsøk på å gjette ordet")
+    print("************ORDLEK************") #Det er 12 stjerner på hver sidet
+    print("I dette spillet skal du gjette et ord innen 6 forsøk")
+    print("Ordet skal inneholde maksimalt 4 bokstaver")
     print("Hvis en bokstav lyser", colored("gult,", 'yellow'), "vil det si at bokstaven er i ordet, men er feil plassert")
     print("Hvis bokstaven lyser", colored("grønt,", 'green'), "vil det si at bokstaven er i ordet og riktig plassert")
     print("Hvis ordet lyser", colored("rødt,", 'red'), "vil det si at hele ordet er feil")
