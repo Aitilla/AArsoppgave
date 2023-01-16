@@ -15,15 +15,22 @@ def callChosen():
     Timer(20, callChosen).start()
     Timer(20, checkWord).start()
 
-def checkWord():
+def checkWord(): 
+    global allowed_guesses
     global userWord
     userWord = input("Write a word with 4 letters: \n").upper()
     if(userWord == chosenWord):
         print("You guessed correctly. Come back tomorrow for a new word. The word was", colored(chosenWord, 'green'))
     else:
         for letters in userWord:
-            if letters[0] == chosenWord[1] or chosenWord[2] or chosenWord[3]:
-                print(letters[0])
+            if letters == chosenWord[0] or letters == chosenWord[1] or letters == chosenWord[2] or letters == chosenWord[3]:
+                print(letters)
+                allowed_guesses = -1
+            if allowed_guesses == 0:
+                print("Try again tomorrow. The word was", colored(chosenWord, 'green'))
+                exit()
+
+
 
 callChosen()
 checkWord()

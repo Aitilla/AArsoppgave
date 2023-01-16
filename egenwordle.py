@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
     password="raring123",
     database="wordle"
 )
-
+ 
 chosenword = random.choice(wordlist) #Velger tilfelig ord fra ordlisten
 
 
@@ -24,8 +24,9 @@ def printMeny():
     print("| 4. Create account                        |")
     print("| 5. Exit                                  |")
     print("--------------------------------------------")
-    menyvalg = input("Skrin inn tall for å velge fra menyen:")
+    menyvalg = input("Skrin inn tall for å velge fra menyen: ")
     utfoerMenyvalg(menyvalg)
+    
 
 #Her bestemmes hvor du skal sendes 
 def utfoerMenyvalg(valgtall):
@@ -42,29 +43,26 @@ def utfoerMenyvalg(valgtall):
         elif(valgtall == "4"):
             print("rar")
         elif(valgtall == "5"):
-            print("Du har nå avsluttet programmet")
-            exit()
-
+            print("\nDu har nå avsluttet programmet")
+ 
 #Hvis ordet du gjetter er riktig, stopper programmet og printer at du gjettet korrekt
 def check_brukerord(brukerord):
     if brukerord == chosenword:
         print("Du har gjettet riktig ord. Ordet var", colored(chosenword, 'green'))
-        exit()
 
 def play():
     #Introduksjon til spillet
-    print("************ORDLEK************") #Det er 12 stjerner på hver sidet
-    print("I dette spillet skal du gjette et ord innen 6 forsøk")
-    print("Ordet skal inneholde maksimalt 4 bokstaver")
+    print("\n************ORDLEK************") #Det er 12 stjerner på hver sidet
+    print("I dette spillet skal du gjette et ord innen 6 forsøk, ordet skal inneholde 4 bokstaver og du får hint under gjettingen")
     print("Hvis en bokstav lyser", colored("gult,", 'yellow'), "vil det si at bokstaven er i ordet, men er feil plassert")
     print("Hvis bokstaven lyser", colored("grønt,", 'green'), "vil det si at bokstaven er i ordet og riktig plassert")
-    print("Hvis ordet lyser", colored("rødt,", 'red'), "vil det si at hele ordet er feil")
+    print("Hvis ordet lyser", colored("rødt,", 'red'), "vil det si at hele ordet er feil \n")
     
     allowed_guesses = 6 #Mengde forsøk du starter med
 
     #En løkke som sier så lenge du har mer en 0 forsøk skal koden kjøre
     while allowed_guesses > 0:
-        brukerord = input("Sriv et ord på 4 bokstaver").upper()
+        brukerord = input("Skriv et ord på 4 bokstaver: \n").upper()
         check_brukerord(brukerord)
         if len(brukerord) > 4 or len(brukerord) < 4: #Hvis ordet du skriver inn er mer eller mindre enn 4 bokstaver skal den ikke kjøre koden under
             print("Ordet må være 4 bokstaver")
