@@ -22,14 +22,21 @@ def checkWord():
     if(userWord == chosenWord):
         print("You guessed correctly. Come back tomorrow for a new word. The word was", colored(chosenWord, 'green'))
     else:
-        for letters in userWord:
-            if letters == chosenWord[0] or letters == chosenWord[1] or letters == chosenWord[2] or letters == chosenWord[3]:
-                print(letters)
-                allowed_guesses = -1
-            if allowed_guesses == 0:
-                print("Try again tomorrow. The word was", colored(chosenWord, 'green'))
-                exit()
-
+        if allowed_guesses <= 1:
+            print("Try again tomorrow. The word was", colored(chosenWord, 'green'))
+            exit()
+        else:    
+            for letter in userWord:
+                if letter == chosenWord[0] or letter == chosenWord[1] or letter == chosenWord[2] or letter == chosenWord[3]:
+                    print(letter)
+                    allowed_guesses = allowed_guesses -1
+                    print("You have", allowed_guesses, "guesses left.")
+                    checkWord()
+                else:
+                    print(colored(userWord, 'red'))
+                    allowed_guesses = allowed_guesses -1
+                    print("You have", allowed_guesses, "guesses left.")
+                    checkWord()
 
 
 callChosen()
