@@ -19,24 +19,19 @@ def checkWord():
     global allowed_guesses
     global userWord
     userWord = input("Write a word with 4 letters: \n").upper()
-    if(userWord == chosenWord):
-        print("You guessed correctly. Come back tomorrow for a new word. The word was", colored(chosenWord, 'green'))
-    else:
-        if allowed_guesses <= 1:
-            print("Try again tomorrow. The word was", colored(chosenWord, 'green'))
-            exit()
-        else:    
-            for letter in userWord:
-                if letter == chosenWord[0] or letter == chosenWord[1] or letter == chosenWord[2] or letter == chosenWord[3]:
-                    print(letter)
-                    allowed_guesses = allowed_guesses -1
-                    print("You have", allowed_guesses, "guesses left.")
-                    checkWord()
+    if allowed_guesses <= 1:
+        print("Try again tomorrow. The word was", colored(chosenWord, 'green'))
+        exit()
+    elif(userWord == chosenWord):
+            print("You guessed correctly. Come back tomorrow for a new word. The word was", colored(chosenWord, 'green'))
+    else:   
+        for x in userWord:
+            for i in chosenWord:
+                if(i == x):
+                    print(colored(x, 'green'))
                 else:
-                    print(colored(userWord, 'red'))
-                    allowed_guesses = allowed_guesses -1
-                    print("You have", allowed_guesses, "guesses left.")
-                    checkWord()
+                    print(x)
+
 
 
 callChosen()
