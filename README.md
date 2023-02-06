@@ -9,3 +9,5 @@ egenwordle_termin2 er hvordan jeg har tenkt hvordan jeg skal starte termin2 dele
 
 ordlek som ligger i gamefolder er arbeidet mitt til dagsdato etter juleferie. Den ligger i egen mappe med ordlisten for testing av pygame og hvordan nedlasting fungerer. Derfor er det to words.py filer en i hver mappe sånn at alle filene fungerer. Jeg har ikke gjort kjempe masse testing, men jeg vet at den fungerer som den skal akkuratt nå.
 
+nettsiden er ikke fungerende
+
