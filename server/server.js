@@ -1,11 +1,10 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
 const PORT = 8080;
 
-app.get('/', (req, res) => {
-    res.end("hello world")
-})
+express.static(path.join('..', 'website'));
 
 app.listen(PORT, () => {
     console.log(`express running on port ${PORT}`);
