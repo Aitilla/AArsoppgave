@@ -1,0 +1,35 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.underTitle{
+    margin-right: 110px;
+    margin-top: -10px;
+}
+
+#download{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    justify-content: center;
+}
+
+#dButton{
+    width: 40%;
+    background-color: blueviolet;
+    color: white;
+    font-size: 50px;
+}
+
+.faq{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+div{
+    border: 2px solid black;
+}
