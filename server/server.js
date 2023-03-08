@@ -9,7 +9,7 @@ app.use('/', (req, res, next) => {
     next();
 })
 
-app.use('/', express.static(path.join('..', 'website')));
+app.use('/', express.static(path.join('..', 'website'), {index: ['index.php', 'index.html']}));
 
 app.listen(PORT, () => {
     console.log(`express running on port ${PORT}`);
