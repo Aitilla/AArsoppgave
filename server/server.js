@@ -1,3 +1,4 @@
+const phpMiddleware = require('node-php');
 const express = require('express');
 const path = require('path');
 
@@ -9,7 +10,11 @@ app.use('/', (req, res, next) => {
     next();
 })
 
-app.use('/', express.static(path.join('..', 'website'), {index: ['index.php', 'index.html']}));
+app.use('/', express.static(path.join('..', 'website', 'static')));
+
+app.use('/', phpMiddleware({
+    root: path.join('..', 'website'),
+}));
 
 app.listen(PORT, () => {
     console.log(`express running on port ${PORT}`);
