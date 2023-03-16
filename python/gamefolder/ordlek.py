@@ -63,7 +63,7 @@ def choice():
         play_game()
     else:
         print("Incorrect input")
-        return choice()
+        choice()
 
 if __name__ == "__main__":
     tutorial()
