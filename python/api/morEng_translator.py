@@ -30,16 +30,16 @@ def getEnglish():
     }
     return morseEng
 
-def translateEnglish():
-    englishLetter = input('Please type what you would like to translate in English\n').lower()
+def translateEnglish(inputValue: str):
+    englishLetter = inputValue.lower()
     start = time.time_ns()
     engMorse = getMorse()
     for i in englishLetter:
         print(engMorse[i].__add__(' '), end = '')
     print(f"Time: {time.time_ns() - start} ns")
 
-def translateMorse():
-    morseLetter = input('Please type what you would like to translate in Morse code\n').split()
+def translateMorse(inputValue: str):
+    morseLetter = inputValue.lower().split()
     start = time.time_ns()
     morseEng = getEnglish()
     for i in morseLetter:
@@ -47,13 +47,13 @@ def translateMorse():
     print(f"\nTime: {time.time_ns() - start} ns")
 
 
-while True:
-    translatorChoice = input('\nType 1 if you would like to translate from English to Morse code\n'
-                             'Type 2 if you would like to translate from Morse code to English\n')
-    if translatorChoice == '1':
-        translateEnglish()
-    elif translatorChoice == '2':
-        translateMorse()
+# while True:
+#     translatorChoice = input('\nType 1 if you would like to translate from English to Morse code\n'
+#                              'Type 2 if you would like to translate from Morse code to English\n')
+#     if translatorChoice == '1':
+#         translateEnglish()
+#     elif translatorChoice == '2':
+#         translateMorse()
 
 
 
