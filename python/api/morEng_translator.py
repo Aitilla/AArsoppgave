@@ -1,5 +1,3 @@
-import time
-
 def getMorse():
     engMorse={    
         "a": ".-", "b": "-...", "c": "-.-.", "d": "-..",    
@@ -30,21 +28,21 @@ def getEnglish():
     }
     return morseEng
 
-def translateEnglish(inputValue: str):
-    englishLetter = inputValue.lower()
-    start = time.time_ns()
+def translateEnglish(inputValueEng: str):
+    englishLetter = inputValueEng.lower()
     engMorse = getMorse()
     for i in englishLetter:
-        print(engMorse[i].__add__(' '), end = '')
-    print(f"Time: {time.time_ns() - start} ns")
+        morse = engMorse[i] + ' '
+    return morse
 
-def translateMorse(inputValue: str):
-    morseLetter = inputValue.lower().split()
-    start = time.time_ns()
+def translateMorse(inputValueMorse: str):
+    morseLetter = inputValueMorse.lower().split()
     morseEng = getEnglish()
     for i in morseLetter:
-        print(morseEng[i], end = '')
-    print(f"\nTime: {time.time_ns() - start} ns")
+        english = morseEng[i]
+    return english
+
+
 
 
 # while True:

@@ -2,17 +2,18 @@
 
 function englishToMorse(){
     // get the input element
-    let text = document.getElementById("engLetter").value
-    console.log(text)
+    let textEng = document.getElementById("engLetter").value
+    console.log(textEng)
     // get text from element
 
     // pass text with request (POST)
     
-    fetch('http://localhost:5000/morseToEng', {
+    fetch('http://localhost:5000/englishToMorse', {
         method: 'POST',
-        headers: {
-            
-        }
+        body: textEng
+        
+    }).then((data) => {
+        console.log(data)
     })
 
     // store response text as variable
@@ -20,8 +21,16 @@ function englishToMorse(){
     // put text where you want to show it
 }
 
-function morseToEnglish(text){
-    fetch('http://localhost:5000/morseToEng')
+function morseToEnglish(){
+    let text = document.getElementById("morseLetter").value
+    console.log(text)
+
+    fetch('http://localhost:5000/morseToEng', {
+        method: 'POST',
+        body: textMorse
+    }).then((data) => {
+        console.log(data)
+    })
 }
 
 console.log(morseToEnglish)

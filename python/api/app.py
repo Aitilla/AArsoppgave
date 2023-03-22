@@ -1,31 +1,25 @@
 from morEng_translator import translateEnglish, translateMorse
-from flask import Flask
+from flask import Flask, request
 
 app = Flask('Translator')
 
 # Route should accept POST request type
 
-# @app.route('/englishToMorse', methods=['POST'])
-# def engToMorse():
-#     # get text from request
-#     # pass text to translate function
-#     return translateEnglish()
-
 @app.route('/englishToMorse', methods=['POST'])
 def engToMorse():
-    inputValue = request.form['input']
-    morseLetter, time_taken = translateEnglish(inputValue)
-    return {'output': morseLetter, 'time': time_taken}
-
-# @app.route('/morseToEng', methods=['POST'])
-# def morseToEng():
-#     return translateMorse()
+    textInput = request.get_data(as_text=True)
+    print(textInput)
+    translatedEng = translateEnglish(inputValueEng=textInput)
+    print(translatedEng)
+    return {'output': translatedEng}
 
 @app.route('/morseToEng', methods=['POST'])
 def morseToEng():
-    inputValue = request.form['input']
-    englishLetter, time_taken = translateMorse(inputValue)
-    return {'output': englishLetter, 'time': time_taken}
+    textInput = request.get_data(as_text=True)
+    print(textInput)
+    translatedMorse = translateMorse(inputValueMorse=textInput)
+    print(translatedMorse)
+    return {'output': translatedMorse}
 
 
 if __name__ == '__main__':
