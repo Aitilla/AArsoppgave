@@ -32,15 +32,15 @@ def translateEnglish(inputValueEng: str):
     englishLetter = inputValueEng.lower()
     engMorse = getMorse()
     for i in englishLetter:
-        morse = engMorse[i] + ' '
-    return morse
+        print(engMorse[i] + ' ')
+    return engMorse[i]
 
 def translateMorse(inputValueMorse: str):
     morseLetter = inputValueMorse.lower().split()
     morseEng = getEnglish()
     for i in morseLetter:
-        english = morseEng[i]
-    return english
+        print(morseEng[i])
+    return morseEng[i]
 
 
 

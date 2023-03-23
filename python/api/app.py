@@ -1,8 +1,9 @@
 from morEng_translator import translateEnglish, translateMorse
 from flask import Flask, request
+from flask_cors import CORS
 
 app = Flask('Translator')
-
+CORS(app)
 # Route should accept POST request type
 
 @app.route('/englishToMorse', methods=['POST'])
@@ -11,7 +12,7 @@ def engToMorse():
     print(textInput)
     translatedEng = translateEnglish(inputValueEng=textInput)
     print(translatedEng)
-    return {'output': translatedEng}
+    return translatedEng
 
 @app.route('/morseToEng', methods=['POST'])
 def morseToEng():
@@ -19,7 +20,7 @@ def morseToEng():
     print(textInput)
     translatedMorse = translateMorse(inputValueMorse=textInput)
     print(translatedMorse)
-    return {'output': translatedMorse}
+    return translatedMorse
 
 
 if __name__ == '__main__':
