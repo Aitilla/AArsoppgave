@@ -7,9 +7,13 @@ function englishToMorse(){
     fetch('http://localhost:5000/englishToMorse', {
         method: 'POST',
         body: textEng
-    }).then((data) => {
-        console.log(data)
-    })
+    }).then(function(response) {
+        return response.text();
+      }).then(function(data) {
+        console.log(data);
+        let translatedElement = document.getElementById('engToMorseResult')
+        translatedElement.value = data
+      });
 
 }
 
@@ -20,9 +24,16 @@ function morseToEnglish(){
     fetch('http://localhost:5000/morseToEng', {
         method: 'POST',
         body: textMorse
-    }).then((data) => {
-        console.log(data)
-    })
+    }).then(function(response) {
+        return response.text();
+      }).then(function(data) {
+        console.log(data);
+        let translatedElement = document.getElementById('morseToEngResult')
+        translatedElement.value = data
+      });
+
+
+
 }
 // store response text as variable
 // console log text

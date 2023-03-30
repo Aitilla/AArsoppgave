@@ -31,16 +31,18 @@ def getEnglish():
 def translateEnglish(inputValueEng: str):
     englishLetter = inputValueEng.lower()
     engMorse = getMorse()
+    morse = ''
     for i in englishLetter:
-        print(engMorse[i] + ' ')
-    return engMorse[i]
+        morse += engMorse[i] + ' '
+    return morse
 
 def translateMorse(inputValueMorse: str):
     morseLetter = inputValueMorse.lower().split()
     morseEng = getEnglish()
+    english = ''
     for i in morseLetter:
-        print(morseEng[i])
-    return morseEng[i]
+        english += morseEng[i]
+    return english
 
 
 
