@@ -27,7 +27,13 @@ button{
 }
 
 
-
+.translator{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    justify-content: center;
+}
 
 
 
