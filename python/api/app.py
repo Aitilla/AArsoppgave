@@ -6,7 +6,7 @@ import time
 import pandas as pd
 
 mydb = mysql.connector.connect(
-    host="10.226.248.5",
+    host="10.2.1.211",
     port=3306,
     user="rar",
     password="raring",
