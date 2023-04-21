@@ -40,4 +40,4 @@ function morseToEnglish(){
 // put text where you want to show it
 
 console.log(morseToEnglish)
-console.log(morseToEnglish)
+console.log(englishToMorse)

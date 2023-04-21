@@ -11,7 +11,6 @@ app.use('/', (req, res, next) => {
 
 app.use('/', express.static(path.join('..', 'website')));
 
-
 app.listen(PORT, () => {
     console.log(`express running on port ${PORT}`);
 })
