@@ -35,9 +35,6 @@ function morseToEnglish(){
 
 
 }
-// store response text as variable
-// console log text
-// put text where you want to show it
 
 console.log(morseToEnglish)
 console.log(englishToMorse)
