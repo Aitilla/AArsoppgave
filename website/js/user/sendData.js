@@ -1,7 +1,7 @@
 const username = document.getElementById('createUser');
 const password = document.getElementById('createPassword');
 const button = document.getElementById('signup');
-const errorMessage = document.getElementById('errorMessage');
+var errorMessage = document.getElementById('errorMessage');
 
 button.addEventListener('click', function() {
     const data = {
@@ -23,6 +23,7 @@ button.addEventListener('click', function() {
             }
         } else {
             console.log(data);
+            errorMessage = 'noProblem'
             console.log(errorMessage)
         }
     })
