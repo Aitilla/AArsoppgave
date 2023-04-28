@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import mysql.connector
 import re
+import pandas as pd
 
 mydb = mysql.connector.connect(
     host="10.2.1.211",
@@ -13,7 +14,14 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-app = Flask('createUser')
+
+mycursor.execute("Select * from users")
+
+myresult = mycursor.fetchall()
+df = pd.DataFrame(myresult, columns=['time', 'text', 'translated'])
+print(df)
+
+app = Flask('Signup')
 CORS(app)
 
 @app.route('/createUser', methods=['POST'])
