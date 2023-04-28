@@ -1,8 +1,7 @@
 const username = document.getElementById('createUser');
 const password = document.getElementById('createPassword');
 const button = document.getElementById('signup');
-const usernameError = document.getElementById('usernameError');
-const passwordError = document.getElementById('passwordError');
+const errorMessage = document.getElementById('errorMessage');
 
 button.addEventListener('click', function() {
     const data = {
@@ -19,16 +18,12 @@ button.addEventListener('click', function() {
     .then(response => response.json())
     .then(data => {
         if (data.error) {
-            if (data.error.includes('Duplicate entry')) {
-                usernameError.textContent = 'Username already exists';
-            }
-            if (data.error.includes('Password must contain at least one number and one character')) {
-                passwordError.textContent = 'Password must contain at least one number and one character';
+            if (data.error.includes('Duplicate entry') && data.error.includes('Password must contain at least one number and one character')) {
+                errorMessage.innerHTML('Username already exists or password does not meet the criteria')
             }
         } else {
-            usernameError.textContent = '';
-            passwordError.textContent = '';
             console.log(data);
+            console.log(errorMessage)
         }
     })
     .catch(error => {
