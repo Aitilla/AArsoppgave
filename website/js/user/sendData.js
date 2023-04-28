@@ -23,11 +23,11 @@ button.addEventListener('click', function() {
             }
         } else {
             console.log(data);
-            errorMessage = 'noProblem'
-            console.log(errorMessage)
         }
     })
     .catch(error => {
         console.error(error);
+        errorMessage = 'noProblem'
+        console.log(errorMessage)
     });
 });
