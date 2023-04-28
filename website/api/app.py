@@ -33,11 +33,11 @@ def create():
     mycursor.execute("SELECT * FROM users WHERE username=%s", (username,))
     result = mycursor.fetchone()
     if result:
-        return "Username already exists."
+        return ("Username already exists.")
 
     # Check if password contains at least one number and one character
     if not (re.search(r'\d', password) and re.search(r'[a-zA-Z]', password)):
-        return "Password must contain at least one number and one character."
+        return ("Password must contain at least one number and one character.")
 
     sql = "INSERT INTO users (username, password) VALUES (%s, %s)"
     val = (username, password)
