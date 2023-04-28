@@ -60,12 +60,3 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-    
-# try:
-#     mydb = mysql.connector.connect(host="10.226.248.5", port=3306, database = 'aarsoppgave',user="rar", passwd="raring")
-#     query = "Select * from studentdetails;"
-#     result_dataFrame = pd.read_sql(query,mydb)
-#     mydb.close() #close the connection
-# except Exception as e:
-#     mydb.close()
-#     print(str(e))
