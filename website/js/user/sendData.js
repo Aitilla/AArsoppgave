@@ -1,42 +1,37 @@
 const username = document.getElementById('createUser');
 const password = document.getElementById('createPassword');
 const button = document.getElementById('signup');
-const errorMessage = document.getElementById('errorMessage');
+const usernameError = document.getElementById('usernameError');
+const passwordError = document.getElementById('passwordError');
 
-button.addEventListener('click', function(){
+button.addEventListener('click', function() {
     const data = {
-        username: username.value, 
+        username: username.value,
         password: password.value
     };
-    fetch('http://localhost:5000/create', {
+    fetch('http://localhost:5000/createUser', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(response => {
-     if (response.ok) {
-            return response.json();
-     } else if (response.status === 400) {
-         return response.text().then(msg => {
-             throw new Error("Username or password is has incorrect input");
-         });
-     } else {
-         throw new Error('Either username is already taken or password is not containing atleast a letter and a number.');
-     }
- }).then(response => {
-     console.log(response);
-     errorMessage.textContent = 'User created successfully';
- 
-    }).catch(error => {
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            if (data.error.includes('Duplicate entry')) {
+                usernameError.textContent = 'Username already exists';
+            }
+            if (data.error.includes('Password must contain at least one number and one character')) {
+                passwordError.textContent = 'Password must contain at least one number and one character';
+            }
+        } else {
+            usernameError.textContent = '';
+            passwordError.textContent = '';
+            console.log(data);
+        }
+    })
+    .catch(error => {
         console.error(error);
-        errorMessage.textContent = error.message;
     });
-});
-
-username.addEventListener('input', function() {
-    errorMessage.textContent = '';
-});
-password.addEventListener('input', function() {
-    errorMessage.textContent = '';
 });
