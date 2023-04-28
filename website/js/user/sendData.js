@@ -15,29 +15,28 @@ button.addEventListener('click', function(){
         },
         body: JSON.stringify(data)
     }).then(response => {
-        // if (response.ok) {
+     if (response.ok) {
             return response.json();
-        // } else if (response.status === 400) {
-        //     return response.text().then(msg => {
-        //         throw new Error("Username or password is has incorrect input");
-        //     });
-        // } else {
-        //     throw new Error('Either username is already taken or password is not containing atleast a letter and a number.');
-        // }
-    // }).then(response => {
-    //     console.log(response);
-    //     errorMessage.textContent = 'User created successfully';
-    // 
+     } else if (response.status === 400) {
+         return response.text().then(msg => {
+             throw new Error("Username or password is has incorrect input");
+         });
+     } else {
+         throw new Error('Either username is already taken or password is not containing atleast a letter and a number.');
+     }
+ }).then(response => {
+     console.log(response);
+     errorMessage.textContent = 'User created successfully';
+ 
     }).catch(error => {
         console.error(error);
         errorMessage.textContent = error.message;
     });
 });
 
-// username.addEventListener('input', function() {
-//     errorMessage.textContent = '';
-// });
-
-// password.addEventListener('input', function() {
-//     errorMessage.textContent = '';
-// });
+username.addEventListener('input', function() {
+    errorMessage.textContent = '';
+});
+password.addEventListener('input', function() {
+    errorMessage.textContent = '';
+});
