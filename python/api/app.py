@@ -15,7 +15,6 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-
 mycursor.execute("Select * from engToMorse")
 
 myresult = mycursor.fetchall()
@@ -55,8 +54,5 @@ def morseToEng():
 
     return translatedMorse
 
-
 if __name__ == '__main__':
     app.run(debug=True)
-
-
