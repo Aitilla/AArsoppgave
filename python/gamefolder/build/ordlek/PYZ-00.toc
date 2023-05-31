@@ -272,18 +272,6 @@
    'C:\\Users\\Joachim '
    '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ast.py',
    'PYMODULE'),
-  ('_py_abc',
-   'C:\\Users\\Joachim '
-   '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\_py_abc.py',
-   'PYMODULE'),
-  ('subprocess',
-   'C:\\Users\\Joachim '
-   '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\subprocess.py',
-   'PYMODULE'),
-  ('signal',
-   'C:\\Users\\Joachim '
-   '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\signal.py',
-   'PYMODULE'),
   ('stringprep',
    'C:\\Users\\Joachim '
    '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\stringprep.py',
@@ -360,9 +348,21 @@
    'C:\\Users\\Joachim '
    '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\bisect.py',
    'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Joachim '
+   '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\_py_abc.py',
+   'PYMODULE'),
   ('tracemalloc',
    'C:\\Users\\Joachim '
    '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Joachim '
+   '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\subprocess.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Joachim '
+   '2IMA\\AppData\\Local\\Programs\\Python\\Python310\\lib\\signal.py',
    'PYMODULE'),
   ('words',
    'C:\\Users\\Joachim 2IMA\\OneDrive - Osloskolen\\Joachim 2 '

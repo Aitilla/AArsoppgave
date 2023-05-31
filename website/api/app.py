@@ -46,6 +46,22 @@ def create():
 
     return jsonify({'message': 'User created'})
 
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+
+    mycursor.execute('SELECT * FROM users WHERE username=%s AND password=%s', (username, password))
+    user = mycursor.fetchone()
+
+    if user:
+        # User exists, login successful
+        return {'message': 'Login successful'}
+    else:
+        # User does not exist or invalid credentials
+        return {'error': 'Wrong username or password'}
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
