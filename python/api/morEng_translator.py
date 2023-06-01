@@ -1,3 +1,4 @@
+#Dictionary which translates english to morse
 def getMorse():
     engMorse={    
         "a": ".-", "b": "-...", "c": "-.-.", "d": "-..",    
@@ -13,6 +14,7 @@ def getMorse():
         }
     return engMorse 
 
+#Dictionary which translates morse to english
 def getEnglish():
     morseEng={
         ".-": "a", "-...": "b", "-.-.": "c", "-..": "d",
@@ -28,6 +30,7 @@ def getEnglish():
     }
     return morseEng
 
+#Translates english to morse
 def translateEnglish(inputValueEng: str):
     englishLetter = inputValueEng.lower()
     engMorse = getMorse()
@@ -36,6 +39,7 @@ def translateEnglish(inputValueEng: str):
         morse += engMorse[i] + ' '
     return morse
 
+#Translates morse to english
 def translateMorse(inputValueMorse: str):
     morseLetter = inputValueMorse.lower().split()
     morseEng = getEnglish()

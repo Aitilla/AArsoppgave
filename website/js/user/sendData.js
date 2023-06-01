@@ -1,8 +1,10 @@
+//Variables
 const username = document.getElementById('createUser');
 const password = document.getElementById('createPassword');
 const button = document.getElementById('signup');
 var errorMessage = document.getElementById('errorMessage');
 
+//When pressed creates an function that sends information to api and creates user if met criteria.
 button.addEventListener('click', function() {
     const data = {
         username: username.value,

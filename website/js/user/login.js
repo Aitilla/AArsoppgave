@@ -1,14 +1,19 @@
+//Variables
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const loginBtn = document.getElementById('loginBtn');
 
-loginBtn.addEventListener('click', function() {
+//If button is pressed creates an function
+loginBtn.addEventListener('click', authorise);
+
+//Created function that send information to api and authorises user if met criteria
+function authorise() {
     const user = {
         username: username.value,
         password: password.value
     };
 
-    fetch('http://localhost:5000/login', {
+    fetch('http://localhost:5000/loginUser', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -22,9 +27,11 @@ loginBtn.addEventListener('click', function() {
         } else {
             console.log('Login successful');
             console.log(user);
+            window.location.href = '../../download.html';
+
         }
     })
     .catch((error) => {
         console.error('Error:', error);
     });
-});
+};

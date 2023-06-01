@@ -1,5 +1,5 @@
 
-
+//Function that send information to engMorse translator and translates english to morse
 function englishToMorse(){
     let textEng = document.getElementById("engLetter").value
     console.log(textEng)
@@ -17,6 +17,7 @@ function englishToMorse(){
 
 }
 
+//Function that send information to engMorse translator and translates morseto english
 function morseToEnglish(){
     let textMorse = document.getElementById("morseLetter").value
     console.log(textMorse)
