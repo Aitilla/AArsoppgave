@@ -29,3 +29,7 @@ List of libraies to install if you would like to download the code yourself
     Node installation for linux
 1. Sudo apt update
 2. Sudo apt install node.js
+3. sudo apt install npm
+3. Make sure you have internett connection and do this command to install correct version of nvm 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash' 
+
+
