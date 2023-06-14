@@ -52,21 +52,21 @@ def create():
     return jsonify({'message': 'User created'})
 
 #Gets information from website and authorieses user for login
-@app.route('/loginUser', methods=['POST'])
-def login():
-    data = request.json
-    username = data.get('username')
-    password = data.get('password')
+# @app.route('/loginUser', methods=['POST'])
+# def login():
+#     data = request.json
+#     username = data.get('username')
+#     password = data.get('password')
 
-    mycursor.execute('SELECT * FROM users WHERE username=%s AND password=%s', (username, password))
-    user = mycursor.fetchone()
+#     mycursor.execute('SELECT * FROM users WHERE username=%s AND password=%s', (username, password))
+#     user = mycursor.fetchone()
 
-    if user:
-        # User exists, login successful
-        return {'message': 'Login successful'}
-    else:
-        # User does not exist or invalid credentials
-        return {'error': 'Wrong username or password'}
+#     if user:
+#         # User exists, login successful
+#         return {'message': 'Login successful'}
+#     else:
+#         # User does not exist or invalid credentials
+#         return {'error': 'Wrong username or password'}
 
 #Starts the script
 if __name__ == '__main__':
